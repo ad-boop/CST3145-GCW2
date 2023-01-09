@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+    <title>School Planner</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="app">
+        <main>
+            <div id="subjects-container">
+                <div id="subject-div" v-for="lesson in lessons">
+                    <h2 >Subject -  {{lesson.topic}}</h2>
+                    <p>Location: {{lesson.location}}</p>
+                    <p>Price: {{ lesson.price }}</p>
+                </div>
+            </div>
+           
+        </main>
+    </div>
+
+    <script>
+      let store = new Vue({
+        el: "#app",
+        data: { lessons: {} },
+        created: function () {
+          // this function will be run automatically
+          // when creating the Vue instance
+          fetch("http://localhost:3000/lessons").then(function (response) {
+            response.json().then(function (json) {
+              // save the returned JSON object to 'product'
+              // note that we used 'store.product' instead of 'this.product'
+              store.lessons = json;
+              console.log(json)
+            });
+          });
+        },
+      });
+    </script>
+  </body>
+</html>
