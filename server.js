@@ -10,7 +10,7 @@ let lessons=[
 
 // Routes GET requests to /lessons to the request handler
 app.get("/lessons", function(request, response) {    
-    response.send(lessons);
+    response.send(JSON.stringify(lessons));
 });
 
 let user={'email':'user@email.com','password':'mypassword'};
