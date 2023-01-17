@@ -15,7 +15,7 @@ app.get("/lessons", function(request, response) {
 
 let user={'email':'user@email.com','password':'mypassword'};
 app.get("/user", function(request, response) {    
-    response.send(user);
+    response.send(JSON.stringify(user));
 });
 
 
