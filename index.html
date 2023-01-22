@@ -25,7 +25,7 @@
 
     <script>
       // vue object
-      let store = new Vue({
+      let school = new Vue({
         el: "#app",
         data: { lessons: {} },
         
@@ -35,8 +35,8 @@
           fetch("http://localhost:3000/lessons").then(function (response) {
             response.json().then(function (json) {
               // save the returned JSON object to 'product'
-              // note that we used 'store.product' instead of 'this.product'
-              store.lessons = json;
+              // note that we used 'school.product' instead of 'this.product'
+              school.lessons = json;
               console.log(json)
             });
           });
