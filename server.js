@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 const express = require('express'); // Requires the Express module
-=======
-var express = require('express');
->>>>>>> 92a900e012e225ea67f2620c0985dee3b588ba7b
 
 // Calls the express function to start a new Express application
 var app = express();
