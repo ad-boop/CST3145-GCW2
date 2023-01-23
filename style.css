@@ -4,7 +4,7 @@
 
 .heading {
   text-align: center;
-  font-size: 60px;
+  font-size: 55px;
   font-family: 'Merriweather', serif;
 }
 
@@ -15,7 +15,7 @@
 }
 
 #subject-div {
-  border: solid black 7px  ;
+  border: solid black 5px  ;
   border-radius: 25px;
   width: 80%;
   text-align: left;
