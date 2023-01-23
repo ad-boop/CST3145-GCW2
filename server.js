@@ -1,8 +1,10 @@
-var express = require('express');
+const express = require('express'); // Requires the Express module
 
+// Calls the express function to start a new Express application
 var app = express();
 const port = 3000;
 
+// An array of all the lessons
 let lessons=[
     {'topic':'maths','location':'Hendon','price':100},
     {'topic':'maths','location':'Colindale','price':80},
@@ -34,7 +36,7 @@ app.get("/user", function(req, res){
 
 //incase of any error
 app.use(function(request, response){
-    response.status(404).send("Page not found. Enter /lessons  or /users");
+    response.status(404).send("Page not found. Enter /lessons  or /user");
 
 });
 
