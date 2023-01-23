@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 const express = require('express'); // Requires the Express module
+=======
+var express = require('express');
+>>>>>>> 92a900e012e225ea67f2620c0985dee3b588ba7b
 
 // Calls the express function to start a new Express application
 var app = express();
+const port = 3000;
 
 // An array of all the lessons
 let lessons=[
@@ -10,16 +15,36 @@ let lessons=[
     {'topic':'maths','location':'Brent Cross','price':90},
     {'topic':'maths','location':'Golders Green','price':120}]
 
+
+let user=[{'email':'user@email.com','password':'mypassword'}];
+
+
+
 // Routes GET requests to /lessons to the request handler
-app.get("/lessons", function(request, response) {    
-    response.send(JSON.stringify(lessons));
+// when /lesson is acessed, the lesson array is sent as the response
+app.get("/lessons", function(req, res){
+    
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.writeHead(200, {'Content-Type' : 'text/plain'});
+    res.end(JSON.stringify(lessons));
 });
 
-let user={'email':'user@email.com','password':'mypassword'};
-app.get("/user", function(request, response) {    
-    response.send(JSON.stringify(user));
+//when /user is accessed, the users array is sent as the response
+app.get("/user", function(req, res){
+    
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.writeHead(200, {'Content-Type' : 'text/plain'});
+    res.end(JSON.stringify(user));
 });
 
 
-// Starts the server on port 3000
-app.listen(3000);
+//incase of any error
+app.use(function(request, response){
+    response.status(404).send("Page not found. Enter /lessons  or /users");
+
+});
+
+//running the server
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`)
+})
