@@ -1,7 +1,9 @@
-const express = require('express');
+const express = require('express'); // Requires the Express module
 
+// Calls the express function to start a new Express application
 var app = express();
 
+// An array of all the lessons
 let lessons=[
     {'topic':'maths','location':'Hendon','price':100},
     {'topic':'maths','location':'Colindale','price':80},
