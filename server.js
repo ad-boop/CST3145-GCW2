@@ -39,6 +39,4 @@ app.use(function(request, response){
 });
 
 //running the server
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`)
-})
+app.listen(3000);
