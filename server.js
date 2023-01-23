@@ -36,7 +36,7 @@ app.get("/user", function(req, res){
 
 //incase of any error
 app.use(function(request, response){
-    response.status(404).send("Page not found. Enter /lessons  or /users");
+    response.status(404).send("Page not found. Enter /lessons  or /user");
 
 });
 
