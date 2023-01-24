@@ -9,5 +9,4 @@
 # Repository Link 
 - https://github.com/ad-boop/CST3145-GCW2
 
-# Demo Link
-- !demo link here!
+
