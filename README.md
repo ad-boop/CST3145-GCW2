@@ -8,3 +8,7 @@
 
 # Repository Link 
 - https://github.com/ad-boop/CST3145-GCW2
+
+
+#Pages Link
+https://ad-boop.github.io/CST3145-GCW2/index.html
